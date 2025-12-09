@@ -8,6 +8,29 @@
     name="titulo"
     required
   />
+  <textarea
+    type="string"
+    placeholder="Reseña corta porfavor =)"
+    [(ngModel)]="pelicula.descripcion"
+    name="descripcion"
+    required
+  ></textarea>
+
+  <input
+    type="string"
+    placeholder="classificacion"
+    [(ngModel)]="pelicula.classificacion"
+    name="classificacion"
+    required
+  />
+
+  <input
+    type="string"
+    placeholder="genero"
+    [(ngModel)]="pelicula.genero"
+    name="genero"
+    required
+  />
 
   <input
     type="text"
@@ -24,7 +47,6 @@
     name="anio"
     required
   />
-
   <button type="submit">
     {{ editando ? 'Actualizar' : 'Guardar' }}
   </button>
@@ -35,6 +57,9 @@
 <table border="1">
   <tr>
     <th>Título</th>
+    <th>Descrpcion</th>
+    <th>classificacion</th>
+    <th>genero</th>
     <th>Director</th>
     <th>Año</th>
     <th>Acciones</th>
@@ -42,6 +67,9 @@
 
   <tr *ngFor="let p of peliculas">
     <td>{{ p.titulo }}</td>
+    <td>{{ p.descripcion}}</td>
+    <td>{{ p.classificacion }}</td>
+    <td>{{ p.genero }}</td>
     <td>{{ p.director }}</td>
     <td>{{ p.anio }}</td>
     <td>

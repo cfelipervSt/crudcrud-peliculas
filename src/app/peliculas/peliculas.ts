@@ -14,6 +14,9 @@ export class PeliculasComponent implements OnInit {
 
   pelicula: Pelicula = {
     titulo: '',
+    descripcion:'',
+    classificacion: '',
+    genero:'',
     director: '',
     anio: new Date().getFullYear()
   };
@@ -55,15 +58,26 @@ export class PeliculasComponent implements OnInit {
     this.pelicula = { ...p };
   }
 
-  eliminarPelicula(id: string) {
+eliminarPelicula(id: string) {
+  // Mostrar confirmación
+  const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar esta película?');
+  
+  if (confirmacion) {
     this.peliculasService.eliminarPelicula(id)
       .subscribe(() => {
         this.obtenerPeliculas();
+        // Opcional: mostrar mensaje de éxito
+        alert('Película eliminada correctamente');
+      }, error => {
+        alert('Error al eliminar la película');
       });
+  } else {
+    console.log('Eliminación cancelada');
   }
+}
 
   resetFormulario() {
-    this.pelicula = { titulo: '', director: '', anio: new Date().getFullYear() };
+    this.pelicula = { titulo: '',descripcion: '', classificacion:'',genero:'',director: '', anio: new Date().getFullYear() };
     this.editando = false;
     this.peliculaId = '';
   }
