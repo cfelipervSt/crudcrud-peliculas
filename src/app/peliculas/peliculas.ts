@@ -47,6 +47,7 @@ export class PeliculasComponent implements OnInit {
         .subscribe(() => {
           this.resetFormulario();
           this.obtenerPeliculas();
+          window.confirm('¿Desea continuar con los cambios?')
         });
     } else {
       this.peliculasService.crearPelicula(this.pelicula)
@@ -105,9 +106,23 @@ export class PeliculasComponent implements OnInit {
   }
 
   editarPelicula(p: Pelicula) {
+    const confirmaredicion = window.confirm('Esta a punto de actualizar la pelicula, ¿desea continuar?')
     this.editando = true;
     this.peliculaId = p._id!;
     this.pelicula = { ...p };
+
+     if (confirmaredicion) {
+      this.peliculasService.actualizarPelicula(p._id!,p)
+        .subscribe(() => {
+          this.obtenerPeliculas();
+          // Opcional: mostrar mensaje de éxito
+          alert('Se ha accedido a editar la pelicula');
+        }, error => {
+          alert('Error al actualizar la película');
+        });
+    } else {
+      console.log('Se cancelo la Edicion');
+    }
   }
 
   eliminarPelicula(id: string) {
