@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { PeliculasComponent } from './peliculas/peliculas';
 
+
 @NgModule({
   declarations: [
     App,
