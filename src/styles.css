@@ -2,7 +2,7 @@
 html, body {
   margin: 0;
   min-height: 100%;
-  background: linear-gradient(130deg, #6d218b, #217e8a, #ff1e8f);
+  background-color: #000;
 }
 
 :host {
@@ -18,7 +18,7 @@ h2 {
   text-align: center;
   font-weight: bold;
   letter-spacing: 3px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: #a901f7;
   text-shadow: 0 0 10px black;
 }
@@ -28,7 +28,7 @@ form {
   max-width: 600px;
   margin: auto;
   padding: 25px;
-  border-radius: 25px;
+  border-radius: 10px;
   background: linear-gradient(145deg, #1c1c1c, #2c2c2c);
   box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
@@ -38,7 +38,7 @@ input {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   outline: none;
   background-color: #111;
@@ -54,7 +54,7 @@ input::placeholder {
 form button {
   width: 100%;
   padding: 12px;
-  border-radius: 25px;
+  border-radius: 10px;
   border: none;
   font-weight: bold;
   background: linear-gradient(135deg, #d614dd, #6b1ecf);
@@ -77,9 +77,13 @@ hr {
 
 
 table {
-  width: 100%;
+  width: 80%;
+  align-items: center;
+  text-align: center;
+  align-content: center;
   border-collapse: collapse;
-  border-radius: 20px;
+  margin: 35px auto;
+  border-radius: 10px;
   overflow: hidden;
   background: #111;
   box-shadow: 0 0 20px rgba(0,0,0,0.9);
@@ -106,7 +110,7 @@ tr:nth-child(even) {
 
 td button {
   padding: 6px 12px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   margin: 2px;
   font-size: 14px;
@@ -139,4 +143,16 @@ td button:hover {
   td, th {
     padding: 8px;
   }
+}
+
+textarea{
+    width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #111;
+  color: #fff;
+  box-shadow: inset 0 0 8px #000;
 }
